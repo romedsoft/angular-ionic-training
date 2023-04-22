@@ -10,12 +10,11 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { environment } from 'src/environments/environment';
 import { UserModel } from './shared/models/security/user.model';
 
-import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
+import { AuthModule, LogLevel} from 'angular-auth-oidc-client';
 
 export function tokenGetter() {
-  const user = JSON.parse(localStorage.getItem("_user")!) as UserModel;
-
-  return user?.token;
+  const token = JSON.parse(sessionStorage.getItem("0-testclient")!).authnResult.access_token;
+  return token;
 }
 
 @NgModule({

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  allowedDomainsForJWT : ['localhost:7018']
+  urlAddress: 'https://localhost:5001',
+  allowedDomainsForJWT : ['localhost:5001']
 };
 
 /*
