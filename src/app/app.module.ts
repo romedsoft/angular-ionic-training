@@ -33,7 +33,7 @@ export function tokenGetter() {
       config: {
         authority: 'https://localhost:5000',
         redirectUrl: window.location.origin,
-        postLogoutRedirectUri: window.location.origin,
+        postLogoutRedirectUri: window.location.origin + '/account/login',
         clientId: 'testclient',
         scope: 'openid profile',
         responseType: 'code',
