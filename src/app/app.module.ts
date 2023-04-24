@@ -40,7 +40,7 @@ export function tokenGetter() {
         silentRenew: true,
         silentRenewUrl : window.location.origin + '/silent-renew.html',
         useRefreshToken: true,
-        renewTimeBeforeTokenExpiresInSeconds: 20,
+        renewTimeBeforeTokenExpiresInSeconds: 60,
         maxIdTokenIatOffsetAllowedInSeconds : 700,
         logLevel: LogLevel.Debug,
       },
