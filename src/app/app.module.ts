@@ -32,7 +32,7 @@ export function tokenGetter() {
     AuthModule.forRoot({
       config: {
         authority: 'https://localhost:5000',
-        redirectUrl: window.location.origin,
+        redirectUrl: window.location.origin + '/account/login',
         postLogoutRedirectUri: window.location.origin + '/account/login',
         clientId: 'testclient',
         scope: 'openid profile offline_access',

@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthorizationGuard } from './shared/guards/auth.guard';
+import { UnAuthGuard } from './shared/guards/unauth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
+    canActivate : [AuthorizationGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
@@ -13,10 +16,12 @@ const routes: Routes = [
   },
   {
     path: 'account/login',
+    canActivate : [UnAuthGuard],
     loadChildren: () => import('./account/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'account/registration',
+    canActivate : [UnAuthGuard],
     loadChildren: () => import('./account/registration/registration.module').then( m => m.RegistrationPageModule)
   },
   {
