@@ -12,11 +12,7 @@ export class HomePage implements OnInit {
   constructor(public oidcSecurityService: OidcSecurityService, public userService : UserService) {}
 
   ngOnInit() {
-    this.oidcSecurityService.checkAuth().subscribe((loginResponse: LoginResponse) => {
-      const { isAuthenticated, userData, accessToken, idToken, configId } = loginResponse;
 
-      /*...*/
-    });
   }
 
   login() {

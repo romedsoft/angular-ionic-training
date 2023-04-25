@@ -11,11 +11,7 @@ export class LoginPage implements OnInit {
   constructor(public oidcSecurityService: OidcSecurityService) { }
 
   ngOnInit() {
-    this.oidcSecurityService.checkAuth().subscribe((loginResponse: LoginResponse) => {
-      const { isAuthenticated, userData, accessToken, idToken, configId } = loginResponse;
 
-      /*...*/
-    });
   }
 
   login() {

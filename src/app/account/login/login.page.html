@@ -7,9 +7,15 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-row>
-    <ion-col>
-      <ion-button (click)="login()" expand="block" color="primary">Sign In</ion-button>
-    </ion-col>
-  </ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-button (click)="login()" expand="block" color="primary">Sign In</ion-button>
+
+        <a [routerLink]="['/account/forgot-password']" expand="block" color="success">Forgot password?</a>
+
+        <ion-button [routerLink]="['/account/registration']" expand="block" color="success">Create new account</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -1,21 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Test App
+      Test App  <ion-button (click)="logout()">Logout</ion-button>
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content class="auth-form">
-  <ion-grid>
-    <ion-row>
-      <ion-col align-self-center>
-        <ion-button [routerLink]="['/account/registration']" expand="block" color="primary">Register</ion-button>
-        <span class="divider line one-line">or </span>
-        <span class="already">Already a user?</span>
-        <ion-button (click)="login()" expand="block" color="danger">Sign In</ion-button>
-        <ion-button (click)="logout()" expand="block" color="danger">Logout</ion-button>
-        <ion-button (click)="getuser()" expand="block" color="success">Get User</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content>
+  
 </ion-content>

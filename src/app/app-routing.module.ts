@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthorizationGuard } from './shared/guards/auth.guard';
 import { UnAuthGuard } from './shared/guards/unauth.guard';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  { path: 'callback', component: AppComponent }, // does nothing but setting up auth
   {
     path: 'account/login',
     canActivate : [UnAuthGuard],
@@ -26,6 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'account/forgot-password',
+    canActivate : [UnAuthGuard],
     loadChildren: () => import('./account/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
 
