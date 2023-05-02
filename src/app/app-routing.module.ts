@@ -3,6 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthorizationGuard } from './shared/guards/auth.guard';
 import { UnAuthGuard } from './shared/guards/unauth.guard';
 import { AppComponent } from './app.component';
+import { SigninRedirectCallbackComponent } from './account/callback/signin-redirect-callback';
+import { SignoutRedirectCallbackComponent } from './account/callback/signout-redirect-callback';
 
 const routes: Routes = [
   {
@@ -15,7 +17,8 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  { path: 'callback', component: AppComponent }, // does nothing but setting up auth
+  { path: 'signin-callback', component: SigninRedirectCallbackComponent },
+ { path: 'signout-callback', component: SignoutRedirectCallbackComponent },
   {
     path: 'account/login',
     canActivate : [UnAuthGuard],

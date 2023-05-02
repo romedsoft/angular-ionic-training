@@ -18,7 +18,10 @@ export class HomePage implements OnInit {
 
 
   logout() {
-    this.oidcSecurityService.logoff().subscribe((result) => console.log(result));
+    this.oidcSecurityService.revokeAccessToken().subscribe((result) => {console.log(result); });
+    this.oidcSecurityService.revokeRefreshToken().subscribe((result) => {console.log(result); });
+    this.oidcSecurityService.logoff().subscribe((result) => {console.log(result); });
+    //this.oidcSecurityService.logoff().subscribe((result) => console.log(result));
   }
 
   getuser(){
