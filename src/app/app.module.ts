@@ -13,8 +13,15 @@ import { UserModel } from './shared/models/security/user.model';
 import { AuthModule, LogLevel} from 'angular-auth-oidc-client';
 
 export function tokenGetter() {
-  const token = JSON.parse(sessionStorage.getItem("0-testclient")!).authnResult.access_token;
-  return token;
+
+  try{
+    const token = JSON.parse(sessionStorage.getItem("0-testclient")!)!.authnResult!.access_token;
+    return token;
+  }catch(e){
+    return null;
+  }
+
+  
 }
 
 @NgModule({

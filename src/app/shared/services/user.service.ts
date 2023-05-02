@@ -9,12 +9,13 @@ import { EnvironmentUrlService } from './enviroment-url.service';
 })
 export class UserService{
 
-  readonly baseURL = `${this.envUrl.urlAddress}/api`;
+  //readonly baseURL = `${this.envUrl.urlAddress}/api`;
+  readonly baseURL = `https://localhost:5000`;
 
   constructor(private http: HttpClient,private envUrl: EnvironmentUrlService) { }
 
   public get = () => {
-    return this.http.get(`${this.baseURL}/user/`, ).pipe(map(model => {
+    return this.http.get(`${this.baseURL}/connect/userinfo`, ).pipe(map(model => {
       return model;
     }));
   }

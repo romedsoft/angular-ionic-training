@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginResponse, OidcSecurityService } from 'angular-auth-oidc-client';
 import { UserService } from '../shared/services/user.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,21 +10,20 @@ import { UserService } from '../shared/services/user.service';
 })
 export class HomePage implements OnInit {
 
-  constructor(public oidcSecurityService: OidcSecurityService, public userService : UserService) {}
+  constructor(public oidcSecurityService: OidcSecurityService, public userService : UserService, public authService : AuthService) {}
 
   ngOnInit() {
 
   }
 
-  login() {
-    this.oidcSecurityService.authorize();
-  }
 
   logout() {
     this.oidcSecurityService.logoff().subscribe((result) => console.log(result));
   }
 
   getuser(){
+
+    //this.authService.getClaims();
     this.userService.get().subscribe((result) => console.log(result));
   
   }
