@@ -8,17 +8,13 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   selector: 'app-silent-callback',
   template: `<div></div>`
 })
-export class SilentCallbackComponent implements OnInit {
+export class UnauthorizedCallbackComponent implements OnInit {
 
   constructor(private _authService: AuthService, private oidcSecurityService: OidcSecurityService, private _router: Router) { }
 
   ngOnInit(): void {
 
-    this.oidcSecurityService.checkAuth().subscribe(({ isAuthenticated, userData, accessToken }) => {
-        // ...
-        this._router.navigate(['/home'], { replaceUrl: true });
-            
-      });
+    this._router.navigate(['/home'], { replaceUrl: true });
     
   }
 }

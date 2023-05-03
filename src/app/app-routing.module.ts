@@ -5,6 +5,7 @@ import { UnAuthGuard } from './shared/guards/unauth.guard';
 import { AppComponent } from './app.component';
 import { SigninRedirectCallbackComponent } from './account/callback/signin-redirect-callback';
 import { SignoutRedirectCallbackComponent } from './account/callback/signout-redirect-callback';
+import { UnauthorizedCallbackComponent } from './account/callback/unauthorized-callback';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   },
   { path: 'signin-callback', component: SigninRedirectCallbackComponent },
  { path: 'signout-callback', component: SignoutRedirectCallbackComponent },
+ { path: 'unauthorized', component: UnauthorizedCallbackComponent },
   {
     path: 'account/login',
     canActivate : [UnAuthGuard],

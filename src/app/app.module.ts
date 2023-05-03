@@ -41,6 +41,7 @@ export function tokenGetter() {
         authority: 'https://localhost:5000',
         redirectUrl: window.location.origin + '/signin-callback',
         postLogoutRedirectUri: window.location.origin + '/signout-callback',
+        unauthorizedRoute : '/unauthorized',
         clientId: 'testclient',
         scope: 'openid profile offline_access',
         responseType: 'code',
