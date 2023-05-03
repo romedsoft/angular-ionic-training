@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { PipesModule } from '../shared/modules/pipes.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    PipesModule,
     FormsModule,
     IonicModule,
     HomePageRoutingModule

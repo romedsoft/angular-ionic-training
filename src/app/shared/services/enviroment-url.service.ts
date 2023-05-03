@@ -7,6 +7,6 @@ import { environment } from 'src/environments/environment';
 })
 export class EnvironmentUrlService {
   public urlAddress: string = environment.urlAddress;
-
+  public petsApiUrl : string = environment.petsApiUrl;
   constructor() { }
 }

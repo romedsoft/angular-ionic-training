@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   urlAddress: 'https://localhost:5001',
+  petsApiUrl: 'https://localhost:5002',
   allowedDomainsForJWT : ['localhost:5001','localhost:5000']
 };
 

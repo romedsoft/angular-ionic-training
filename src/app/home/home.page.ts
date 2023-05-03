@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { LoginResponse, OidcSecurityService } from 'angular-auth-oidc-client';
 import { UserService } from '../shared/services/user.service';
 import { AuthService } from '../shared/services/auth.service';
+import { PetServiceService } from '../shared/services/pet.service';
+import { Observable } from 'rxjs';
+import { PetModel } from '../shared/models/pet/pet.model';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +13,16 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class HomePage implements OnInit {
 
-  constructor(public oidcSecurityService: OidcSecurityService, public userService : UserService, public authService : AuthService) {}
+
+  pets$!: Observable<Array<PetModel>>;
+
+  constructor(public oidcSecurityService: OidcSecurityService, 
+    public userService : UserService,
+    public authService : AuthService,
+    public petService : PetServiceService) {}
 
   ngOnInit() {
-
+    this.pets$  = this.petService.getTopFive();
   }
 
 
