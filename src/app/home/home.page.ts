@@ -17,8 +17,6 @@ export class HomePage implements OnInit {
   pets$!: Observable<Array<PetModel>>;
 
   constructor(public oidcSecurityService: OidcSecurityService, 
-    public userService : UserService,
-    public authService : AuthService,
     public petService : PetServiceService) {}
 
   ngOnInit() {
@@ -30,13 +28,7 @@ export class HomePage implements OnInit {
     this.oidcSecurityService.revokeAccessToken().subscribe((result) => {console.log(result); });
     this.oidcSecurityService.revokeRefreshToken().subscribe((result) => {console.log(result); });
     this.oidcSecurityService.logoff().subscribe((result) => {console.log(result); });
-    //this.oidcSecurityService.logoff().subscribe((result) => console.log(result));
+
   }
 
-  getuser(){
-
-    //this.authService.getClaims();
-    this.userService.get().subscribe((result) => console.log(result));
-  
-  }
 }

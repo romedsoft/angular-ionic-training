@@ -11,6 +11,6 @@ export class AppComponent  implements OnInit {
   constructor(private oidcSecurityService: OidcSecurityService,private router: Router) {}
 
   ngOnInit() {
-    this.oidcSecurityService.isAuthenticated$
+
   }
 }
