@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
   pets$!: Observable<Array<PetModel>>;
 
   constructor(public oidcSecurityService: OidcSecurityService, 
-    public petService : PetServiceService) {}
+    public petService : PetServiceService, private authService : AuthService) {}
 
   ngOnInit() {
     this.pets$  = this.petService.getTopFive();
@@ -25,6 +25,7 @@ export class HomePage implements OnInit {
 
 
   logout() {
+    this.authService.setAsNoAuthenticated();
     this.oidcSecurityService.revokeAccessToken().subscribe((result) => {console.log(result); });
     this.oidcSecurityService.revokeRefreshToken().subscribe((result) => {console.log(result); });
     this.oidcSecurityService.logoff().subscribe((result) => {console.log(result); });
